@@ -22,7 +22,10 @@ echo ------------------------------------------------------------------------
 echo -- install metrics-server
 echo ------------------------------------------------------------------------
 
-kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+helm repo add metrics-server https://kubernetes-sigs.github.io/metrics-server/
+helm install --set 'args={--kubelet-insecure-tls}' --namespace kube-system metrics metrics-server/metrics-server
+
+# kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 
 echo ------------------------------------------------------------------------
 echo -- install service binding
