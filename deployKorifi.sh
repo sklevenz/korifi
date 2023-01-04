@@ -10,9 +10,9 @@ echo -- export environment
 echo ------------------------------------------------------------------------
 
 export ROOT_NAMESPACE="cf"
-export KORIFI_NAMESPACE="korifi"
-export ADMIN_USERNAME="cf-admin"
-export BASE_DOMAIN="korifi.example.org"
+export KORIFI_NAMESPACE="korifi-system"
+export ADMIN_USERNAME="kubernetes-admin"
+export BASE_DOMAIN="apps-127-0-0-1.nip.io"
 
 echo ------------------------------------------------------------------------
 echo -- install namespaces
@@ -58,18 +58,10 @@ helm install korifi https://github.com/cloudfoundry/korifi/releases/download/v0.
     --set=adminUserName="$ADMIN_USERNAME" \
     --set=api.apiServer.url="api.$BASE_DOMAIN" \
     --set=global.defaultAppDomainName="apps.$BASE_DOMAIN" \
-    --set=global.containerRepositoryPrefix=index.docker.io/sklevenz \
-    --set=kpack-image-builder.builderRepository=index.docker.io/sklevenz/kpack
+    --set=global.containerRepositoryPrefix=europe-west1-docker.pkg.dev/my-project/korifi/ \
+    --set=api.packageRepository=index.docker.io/sklevenz/packages \
+    --set=kpack-image-builder.builderRepository=index.docker.io/sklevenz/kpack-builder \
+    --set=kpack-image-builder.dropletRepository=index.docker.io/sklevenz/droplets
 
 
 
-
-# # helm install korifi https://github.com/cloudfoundry/korifi/releases/download/v<VERSION>/korifi-<VERSION>.tgz \
-# #     --namespace="$KORIFI_NAMESPACE" \
-# #     --set=global.generateIngressCertificates=true \
-# #     --set=global.rootNamespace="$ROOT_NAMESPACE" \
-# #     --set=adminUserName="$ADMIN_USERNAME" \
-# #     --set=api.apiServer.url="api.$BASE_DOMAIN" \
-# #     --set=global.defaultAppDomainName="apps.$BASE_DOMAIN" \
-# #     --set=global.containerRepositoryPrefix=europe-west1-docker.pkg.dev/my-project/korifi/ \
-# #     --set=kpack-image-builder.builderRepository=europe-west1-docker.pkg.dev/my-project/korifi/kpack-builder \    
