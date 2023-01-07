@@ -10,13 +10,20 @@ Watch with `k9s` (brew install k9s)
 
 call:
 
-1. ./createKorifiCluster.sh
-1. ./deployDependencies.sh
-1. ./deployKorifi.sh
-1. ./undeployKorifi.sh *)
-1. ./deployKorifi.sh
-1. ./loginKorifi.sh
-1. ./deployApp.sh
+```
+export DOCKER_HUB_SERVER="https://index.docker.io/v1/"
+export DOCKER_HUB_USER=sklevenz # your docker hub user
+export DOCKER_HUB_PASSWORD=***  # create an api token at docker hub (read, write, delete)
+```
+
+
+1. `./createKorifiCluster.sh`
+1. `./deployDependencies.sh`
+1. `./deployKorifi.sh`
+1. `./undeployKorifi.sh` *)
+1. `./deployKorifi.sh`
+1. `./loginKorifi.sh`
+1. `./deployApp.sh`
 
 *) consider: https://github.com/cloudfoundry/korifi/issues/2045
 
