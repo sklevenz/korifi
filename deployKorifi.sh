@@ -61,7 +61,8 @@ helm install korifi https://github.com/cloudfoundry/korifi/releases/download/v0.
     --set=global.containerRepositoryPrefix=index.docker.io/$DOCKER_HUB_USER/ \
     --set=api.packageRepository=index.docker.io/$DOCKER_HUB_USER/packages \
     --set=kpack-image-builder.builderRepository=index.docker.io/$DOCKER_HUB_USER/kpack-builder \
-    --set=kpack-image-builder.dropletRepository=index.docker.io/$DOCKER_HUB_USER/droplets
+    --set=kpack-image-builder.dropletRepository=index.docker.io/$DOCKER_HUB_USER/droplets \
+    --wait
 
 
 
