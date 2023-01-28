@@ -51,7 +51,7 @@ echo ------------------------------------------------------------------------
 echo -- install korifi
 echo ------------------------------------------------------------------------
 
-helm install korifi https://github.com/cloudfoundry/korifi/releases/download/v0.5.0/korifi-0.5.0.tgz \
+helm install korifi https://github.com/cloudfoundry/korifi/releases/download/v0.6.0/korifi-0.6.0.tgz \
     --namespace="$KORIFI_NAMESPACE" \
     --set=global.generateIngressCertificates=true \
     --set=global.rootNamespace="$ROOT_NAMESPACE" \
@@ -60,8 +60,8 @@ helm install korifi https://github.com/cloudfoundry/korifi/releases/download/v0.
     --set=global.defaultAppDomainName="apps.$BASE_DOMAIN" \
     --set=global.containerRepositoryPrefix=index.docker.io/$DOCKER_HUB_USER/ \
     --set=api.packageRepository=index.docker.io/$DOCKER_HUB_USER/packages \
-    --set=kpack-image-builder.builderRepository=index.docker.io/$DOCKER_HUB_USER/kpack-builder \
-    --set=kpack-image-builder.dropletRepository=index.docker.io/$DOCKER_HUB_USER/droplets \
+    --set=kpackImageBuilder.builderRepository=index.docker.io/$DOCKER_HUB_USER/kpack-builder \
+    --set=kpackImageBuilder.dropletRepository=index.docker.io/$DOCKER_HUB_USER/droplets \
     --wait
 
 
