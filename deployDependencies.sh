@@ -4,13 +4,13 @@ echo ------------------------------------------------------------------------
 echo -- install cert-manager
 echo ------------------------------------------------------------------------
 
-kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.10.1/cert-manager.yaml
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/cert-manager.yaml
 
 echo ------------------------------------------------------------------------
 echo -- install kpack
 echo ------------------------------------------------------------------------
 
-kubectl apply -f https://github.com/pivotal/kpack/releases/download/v0.9.1/release-0.9.1.yaml
+kubectl apply -f https://github.com/pivotal/kpack/releases/download/v0.10.1/release-0.10.1.yaml
 
 echo ------------------------------------------------------------------------
 echo -- install contour

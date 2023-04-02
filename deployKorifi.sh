@@ -13,6 +13,7 @@ export ROOT_NAMESPACE="cf"
 export KORIFI_NAMESPACE="korifi-system"
 export ADMIN_USERNAME="kubernetes-admin"
 export BASE_DOMAIN="apps-127-0-0-1.nip.io"
+export KORIFI_VERSION="0.7.1"
 
 echo ------------------------------------------------------------------------
 echo -- install namespaces
@@ -51,7 +52,7 @@ echo ------------------------------------------------------------------------
 echo -- install korifi
 echo ------------------------------------------------------------------------
 
-helm install korifi https://github.com/cloudfoundry/korifi/releases/download/v0.6.0/korifi-0.6.0.tgz \
+helm install korifi https://github.com/cloudfoundry/korifi/releases/download/v$KORIFI_VERSION/korifi-$KORIFI_VERSION.tgz \
     --namespace="$KORIFI_NAMESPACE" \
     --set=global.generateIngressCertificates=true \
     --set=global.rootNamespace="$ROOT_NAMESPACE" \

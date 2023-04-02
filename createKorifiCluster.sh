@@ -27,4 +27,5 @@ fi
 
 kind get clusters
 kind get nodes -n korifi-cluster
+mkdir -p gen
 kind get  kubeconfig -n korifi-cluster > ./gen/kubeconfig.yml
