@@ -13,7 +13,7 @@ export ROOT_NAMESPACE="cf"
 export KORIFI_NAMESPACE="korifi-system"
 export ADMIN_USERNAME="kubernetes-admin"
 export BASE_DOMAIN="apps-127-0-0-1.nip.io"
-export KORIFI_VERSION="0.7.1"
+export KORIFI_VERSION="0.8.1"
 
 echo ------------------------------------------------------------------------
 echo -- install namespaces

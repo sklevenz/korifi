@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
 
+CERT_MANAGER_VERSION="1.12.0"
+KPACK_VERSION="0.11.2"
+
 echo ------------------------------------------------------------------------
 echo -- install cert-manager
 echo ------------------------------------------------------------------------
 
-kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/cert-manager.yaml
+kubectl apply -f "https://github.com/cert-manager/cert-manager/releases/download/v$CERT_MANAGER_VERSION/cert-manager.yaml"
 
 echo ------------------------------------------------------------------------
 echo -- install kpack
 echo ------------------------------------------------------------------------
 
-kubectl apply -f https://github.com/pivotal/kpack/releases/download/v0.10.1/release-0.10.1.yaml
+kubectl apply -f "https://github.com/pivotal/kpack/releases/download/v$KPACK_VERSION/release-$KPACK_VERSION.yaml"
 
 echo ------------------------------------------------------------------------
 echo -- install contour

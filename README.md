@@ -20,11 +20,8 @@ export DOCKER_HUB_PASSWORD=***  # create an api token at docker hub (read, write
 1. `./createKorifiCluster.sh`
 1. `./deployDependencies.sh`
 1. `./deployKorifi.sh`
-1. `./undeployKorifi.sh` *)
 1. `./loginKorifi.sh`
 1. `./deployApp.sh`
-
-*) consider: https://github.com/cloudfoundry/korifi/issues/2045
 
 ## DNS rebind protection
 
