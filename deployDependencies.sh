@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-CERT_MANAGER_VERSION="1.12.0"
-KPACK_VERSION="0.11.2"
+CERT_MANAGER_VERSION="1.13.1"
+KPACK_VERSION="0.12.1"
 
 echo ------------------------------------------------------------------------
 echo -- install cert-manager
