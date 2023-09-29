@@ -1,14 +1,12 @@
 # Korifi 
 
-Some install helper scripts to install 'cloudfoundry/korifi' on Docker Desktop following these instructions.
+Some install helper scripts are available to install 'cloudfoundry/korifi' on Docker Desktop for OSX, following these instructions.
 
 * https://github.com/cloudfoundry/korifi/blob/main/INSTALL.kind.md
 
 ## Try out
 
-Watch with `k9s` (brew install k9s)
-
-call:
+Call:
 
 ```
 export DOCKER_HUB_SERVER="https://index.docker.io/v1/"
@@ -16,12 +14,13 @@ export DOCKER_HUB_USER=sklevenz # your docker hub user
 export DOCKER_HUB_PASSWORD=***  # create an api token at docker hub (read, write, delete)
 ```
 
-
 1. `./createKorifiCluster.sh`
 1. `./deployDependencies.sh`
 1. `./deployKorifi.sh`
 1. `./loginKorifi.sh`
 1. `./deployApp.sh`
+
+A browser window should open this URL: https://test-app.apps.apps-127-0-0-1.nip.io/
 
 ## DNS rebind protection
 
