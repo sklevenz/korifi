@@ -13,7 +13,7 @@ export ROOT_NAMESPACE="cf"
 export KORIFI_NAMESPACE="korifi-system"
 export ADMIN_USERNAME="kubernetes-admin"
 export BASE_DOMAIN="apps-127-0-0-1.nip.io"
-export KORIFI_VERSION="0.8.1"
+export KORIFI_VERSION="0.9.0"
 
 echo ------------------------------------------------------------------------
 echo -- install namespaces
@@ -52,18 +52,19 @@ echo ------------------------------------------------------------------------
 echo -- install korifi
 echo ------------------------------------------------------------------------
 
+echo "KORIFI_NAMESPACE:$KORIFI_NAMESPACE"
+echo "ROOT_NAMESPACE:$ROOT_NAMESPACE"
+echo "ADMIN_USERNAME:$ADMIN_USERNAME"
+echo "BASE_DOMAIN:$BASE_DOMAIN"
+echo "DOCKER_HUB_USER:$DOCKER_HUB_USER"
+
 helm install korifi https://github.com/cloudfoundry/korifi/releases/download/v$KORIFI_VERSION/korifi-$KORIFI_VERSION.tgz \
     --namespace="$KORIFI_NAMESPACE" \
-    --set=global.generateIngressCertificates=true \
-    --set=global.rootNamespace="$ROOT_NAMESPACE" \
+    --set=generateIngressCertificates=true \
+    --set=rootNamespace="$ROOT_NAMESPACE" \
     --set=adminUserName="$ADMIN_USERNAME" \
     --set=api.apiServer.url="api.$BASE_DOMAIN" \
-    --set=global.defaultAppDomainName="apps.$BASE_DOMAIN" \
-    --set=global.containerRepositoryPrefix=index.docker.io/$DOCKER_HUB_USER/ \
-    --set=api.packageRepository=index.docker.io/$DOCKER_HUB_USER/packages \
+    --set=defaultAppDomainName="apps.$BASE_DOMAIN" \
+    --set=containerRepositoryPrefix=index.docker.io/$DOCKER_HUB_USER/ \
     --set=kpackImageBuilder.builderRepository=index.docker.io/$DOCKER_HUB_USER/kpack-builder \
-    --set=kpackImageBuilder.dropletRepository=index.docker.io/$DOCKER_HUB_USER/droplets \
     --wait
-
-
-
