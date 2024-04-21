@@ -22,7 +22,7 @@ export DOCKER_HUB_PASSWORD=***  # create an api token at docker hub (read, write
 1. `./deleteKorifiCluster.sh`
 
 
-A browser window should open this URL: https://test-app.apps.apps-127-0-0-1.nip.io/
+A browser window should open this URL: [https://test-app.apps.apps-127-0-0-1.nip.io/](https://test-app.apps-127-0-0-1.nip.io/)
 
 ## Troubleshooting
 
