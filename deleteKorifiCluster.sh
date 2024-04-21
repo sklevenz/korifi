@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-kind delete cluster -n korifi-cluster
+kind delete cluster -n korifi
 rm -rf ./gen
 mkdir gen
